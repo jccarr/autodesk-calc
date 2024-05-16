@@ -32,6 +32,15 @@ describe("Verify the Google Calculator's", { scrollBehavior: 'top' }, () => {
     })
   })
 
+  describe("seperator/period/dot", () => {
+    specify('represents properly when used before any digits', () => {
+      cy.verifyEquation('.25=.25')
+    })
+    specify('represents properly when used between digits', () => {
+      cy.verifyEquation('12.25=12.25')
+    })
+  })
+
   describe("plus operator", () => {
     specify('proplerly adds two positive integers', () => {
       cy.verifyEquation('123 + 123 = 246')
